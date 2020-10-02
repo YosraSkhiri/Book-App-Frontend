@@ -1,0 +1,27 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; }
+
+.navbar {
+  padding: 22px 0; }
+
+@font-face {
+  font-family: 'montserrat';
+  src: url("../../fonts/montserrat/montserrat-bold-webfont.eot");
+  src: url("../../fonts/montserrat/montserrat-bold-webfont.eot?#iefix") format("embedded-opentype"), url("../../fonts/montserrat/montserrat-bold-webfont.woff2") format("woff2"), url("../../fonts/montserrat/montserrat-bold-webfont.woff") format("woff"), url("../../fonts/montserrat/montserrat-bold-webfont.svg#montserratbold") format("svg");
+  font-weight: bold;
+  font-style: normal; }
+
+.logo {
+  display: flex;
+  align-items: flex-end;
+  justify-items: center;
+  justify-content: space-between;
+  max-width: 168px; }
+
+.logo__txt {
+  font-family: 'montserrat';
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 3px; }
