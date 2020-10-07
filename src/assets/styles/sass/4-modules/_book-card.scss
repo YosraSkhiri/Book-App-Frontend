@@ -1,0 +1,50 @@
+.book-card__wrapper {
+    display: flex;
+    max-width: 480px;
+    padding: 10px;
+    overflow: hidden;
+    //background-color: rgb(230, 230, 233);
+}
+
+.book-card__cover-img {
+    min-width: 145px;
+    padding-right: 16px;
+
+    & > img {
+        display: block;
+        width: 100%;
+    }
+}
+
+.book-card__txt {
+    line-height: 1.6;
+    color: #1a1a1a;
+}
+
+.book-card__authors {
+    font-size: 12px;
+    color: #757575;
+
+    & > .book-card__author {
+        display: inline-block;
+        margin-right: 10px;
+        
+    }
+}
+
+.book-card__title {
+    font-size: 25px;
+    font-weight: 600;
+    font-family: 'Oswald', sans-serif;
+}
+
+.book-card__desc {
+    font-size: 13px;
+    color: #383838;
+}
+
+.book-card__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
