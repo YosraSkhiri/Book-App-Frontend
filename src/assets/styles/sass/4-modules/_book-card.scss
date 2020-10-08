@@ -1,7 +1,7 @@
 .book-card__wrapper {
     display: grid;
-    grid-template-areas: "cover info" 
-                         "cover btns";
+    grid-template-areas: "book-cover book-info" 
+                         "book-cover book-card-btns";
     max-width: 420px;
     padding: 8px;
     overflow: hidden;
@@ -9,7 +9,7 @@
 
 .book-card__cover-img {
     max-width: 110px;
-    grid-area: cover;
+    grid-area: book-cover;
     & > img {
         display: block;
         width: 100%;
@@ -17,7 +17,7 @@
 }
 
 .book-card__content {
-    grid-area: info;
+    grid-area: book-info;
     margin-top: 8px;
     margin-left: 16px;
 }
@@ -25,7 +25,7 @@
 .book-card__title {
     font-family: 'Oswald', sans-serif;
     font-size: 1.5rem;
-    font-weight: 600;
+    font-weight: 500;
     line-height: .8;
 }
 
@@ -70,7 +70,7 @@
 }
 
 .book-card__btn-group {
-    grid-area: btns;
+    grid-area: book-card-btns;
     justify-self: end;
     align-self: end;
     margin-top: 16px;
