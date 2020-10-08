@@ -8,34 +8,46 @@ const BookCard = () => {
             <div className="book-card__cover-img">
                 <img src={bookCover} alt="Cover image of" />
             </div>
-            <div className="book-card__txt">
-                <div className="book-card__authors">
-                    <ul>
-                        <li className="book-card__author">Hans Rosling</li>
-                        <li className="book-card__author">Ola Rosling</li>
-                        <li className="book-card__author">Anna Rosling Rönnlund</li>
-                    </ul>
-                </div>
-                <div className="book-card__row">
-                    <div className="book-card__title">Factfulness</div>
-                    <div className="book-card__rating">
-                        <svg width="18px" viewBox="0 0 16.79 16.08">
-                            <title>star</title>
-                            <path
-                                fill="#0ec3f9"
-                                d="M.38,7.21l3,2.59a1.09,1.09,0,0,1,.35,1.07l-.93,3.88a1.08,1.08,0,0,0,1.6,1.17l3.41-2.09a1.07,1.07,0,0,1,1.12,0l3.41,2.09A1.08,1.08,0,0,0,14,14.75L13,10.87a1.08,1.08,0,0,1,.34-1.07l3-2.59a1.07,1.07,0,0,0-.61-1.88l-4-.32a1.06,1.06,0,0,1-.9-.66L9.39.66a1.07,1.07,0,0,0-2,0L5.87,4.35A1.06,1.06,0,0,1,5,5L1,5.33A1.07,1.07,0,0,0,.38,7.21Z"
-                            />
+            <div className="book-card__content">
+                <div className="book-card__title">Factfulness</div>
+
+                <ul className="book-card__authors">
+                    <li className="book-card__author">Hans Rosling</li>
+                    <li className="book-card__author">Ola Rosling</li>
+                    <li className="book-card__author">Anna Rosling Rönnlund</li>
+                </ul>
+
+                <div className="book-card__engagement">
+                    <span className="book-card__rating">
+                        <svg width="18" height="17" viewBox="0 0 18 17" fill="none" className="svg-inline-icon">
+                            <path d="M9 1L11.472 6.008L17 6.816L13 10.712L13.944 16.216L9 13.616L4.056 16.216L5 10.712L1 6.816L6.528 6.008L9 1Z" stroke="#393939" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <span className="book-card__rating-avg">4.1</span>
+                        <span className="book-card__rating-nbr">10k reviews</span>
+                    </span>
+
+                    <span className="book-card__comments">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="svg-inline-icon">
+                            <path d="M15 10.3333C15 10.7459 14.8361 11.1416 14.5444 11.4333C14.2527 11.725 13.857 11.8889 13.4444 11.8889H4.11111L1 15V2.55556C1 2.143 1.16389 1.74733 1.45561 1.45561C1.74733 1.16389 2.143 1 2.55556 1H13.4444C13.857 1 14.2527 1.16389 14.5444 1.45561C14.8361 1.74733 15 2.143 15 2.55556V10.3333Z" stroke="#393939" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
 
-                        <div className="rating__nbr"><span>4</span>/5</div>
-                    </div>
+                        <span className="book-card__comments-nbr">14</span>
+                    </span>
                 </div>
-                <p className="book-card__desc">
-                    The international bestseller, inspiring and revelatory,
-                    filled with lively anecdotes and moving stories, Factfulness
-                    is an...
-                    <a>Read More</a>
-                </p>
+
+                <div className="book-card__btn-group">
+                    <button className="btn btn-icon">
+                        <svg width="10" height="12" viewBox="0 0 10 12" fill="none">
+                            <path d="M9 11L5 8.22222L1 11V2.11111C1 1.81643 1.12041 1.53381 1.33474 1.32544C1.54906 1.11706 1.83975 1 2.14286 1H7.85714C8.16025 1 8.45094 1.11706 8.66526 1.32544C8.87959 1.53381 9 1.81643 9 2.11111V11Z" stroke="#393939" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <button className="btn btn-with-icon">
+                        <span>Read more</span>
+                        <svg width="5" height="9" viewBox="0 0 5 9" fill="none">
+                            <path d="M1 7.75L4 4.375L1 1" stroke="#393939" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </div>
             </div>
         </div>
     );

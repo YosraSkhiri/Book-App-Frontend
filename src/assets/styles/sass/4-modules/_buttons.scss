@@ -1,0 +1,16 @@
+.btn {
+    border: 1px solid #C0BFBF;
+    border-radius: 10px;
+}
+
+.btn-icon {
+    padding: 7px 11px;
+}
+
+.btn-with-icon {
+    padding: 10px;
+    font-size: 12px;
+    & > svg {
+        margin-left: 12px;
+    }
+}
