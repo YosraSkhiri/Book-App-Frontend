@@ -1,12 +1,15 @@
 .book-card__wrapper {
-    display: flex;
-    gap: 20px;
+    display: grid;
+    grid-template-areas: "cover info" 
+                         "cover btns";
+    max-width: 420px;
     padding: 8px;
     overflow: hidden;
 }
 
 .book-card__cover-img {
-    width: 110px;
+    max-width: 110px;
+    grid-area: cover;
     & > img {
         display: block;
         width: 100%;
@@ -14,20 +17,21 @@
 }
 
 .book-card__content {
-    position: relative;
-    padding: 12px 0;
+    grid-area: info;
+    margin-top: 8px;
+    margin-left: 16px;
 }
 
 .book-card__title {
     font-family: 'Oswald', sans-serif;
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: 600;
-    line-height: .7;
+    line-height: .8;
 }
 
 .book-card__authors {
     margin: 5px 0 10px 0;
-    font-size: 12px;
+    font-size: .75rem;
     font-weight: 300;
     color: rgba(0, 0, 0, .8);
 
@@ -48,14 +52,14 @@
 
 .book-card__rating-avg,
 .book-card__comments-nbr {
-    font-size: 14px;
+    font-size: .875rem;
     font-weight: 500;
 }
 
 
 .book-card__rating-nbr {
     margin-left: 4px;
-    font-size: 12px;
+    font-size: .75rem;
     color: #6e6e6e;
 }
 
@@ -66,9 +70,12 @@
 }
 
 .book-card__btn-group {
-    position: absolute;
-    bottom: 0;
-    right: 0;
+    grid-area: btns;
+    justify-self: end;
+    align-self: end;
+    margin-top: 16px;
+    margin-bottom: 8px;
+
     & > button:first-child {
         margin-right: 8px;
     }
