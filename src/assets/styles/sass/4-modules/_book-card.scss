@@ -1,5 +1,7 @@
 .book-card__wrapper {
     display: grid;
+    grid-template-columns: 110px auto;
+    
     grid-template-areas: "book-cover book-info" 
                          "book-cover book-card-btns";
     max-width: 420px;
