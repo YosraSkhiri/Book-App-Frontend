@@ -14,9 +14,13 @@ const Books = () => {
     });
 
     return (
-        books.map(book => (
+        <div className="books-result">
+        {
+            books.map(book => (
             <BookCard title={book.title} key={book._id}/>
-        ))
+            ))
+        }
+        </div>
     );
 }
 
