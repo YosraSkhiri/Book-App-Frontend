@@ -1,14 +1,19 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import bookCover from '../assets/images/coverbook.jpg';
 
 const BookCard = (props) => {
     return (
         <div className="book-card__wrapper">
             <div className="book-card__cover-img">
-                <img src={bookCover} alt="Cover of" />
+                <Link to={`/book/${props.title}/${props.id}`}>
+                    <img src={bookCover} alt="Cover of" />
+                </Link>
             </div>
             <div className="book-card__content">
-                <div className="book-card__title">{ props.title }</div>
+                <Link to={`/book/${props.title}/${props.id}`}>
+                    <div className="book-card__title">{props.title}</div>
+                </Link>
 
                 <ul className="book-card__authors">
                     {
