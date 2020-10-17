@@ -4,6 +4,7 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
+import Book from './components/Book';
 import Books from './components/Books';
 import Navbar from './components/Navbar';
 
@@ -18,7 +19,7 @@ function App() {
               <Books />
             </Route>
             <Route path={`/book/:bookTitle/:bookId`}>
-              <p>hi</p>
+              <Book />
             </Route>
           </Switch>
         </Router>

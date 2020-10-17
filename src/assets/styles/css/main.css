@@ -173,18 +173,14 @@ a {
 .book-card__comments > .svg-inline-icon {
   margin-bottom: -4px; }
 
-.book-card__btn-group {
-  grid-area: book-card-btns;
-  justify-self: end;
-  align-self: end;
-  margin-top: 16px;
-  margin-bottom: 8px; }
-  .book-card__btn-group > button:first-child {
-    margin-right: 8px; }
-
 .btn {
   border: 1px solid #C0BFBF;
   border-radius: 10px; }
+
+.btn-primary {
+  padding: 9px 14px;
+  font-size: 12px;
+  font-weight: 600; }
 
 .btn-icon {
   padding: 7px 11px; }
@@ -194,3 +190,24 @@ a {
   font-size: 12px; }
   .btn-with-icon > svg {
     margin-left: 12px; }
+
+.btn-group {
+  grid-area: book-card-btns;
+  justify-self: end;
+  align-self: end;
+  margin-top: 16px;
+  margin-bottom: 8px; }
+  .btn-group > button:first-child {
+    margin-right: 8px; }
+
+.book-main {
+  display: flex;
+  gap: 32px; }
+  .book-main__fst-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 4px; }
+  .book-main__description {
+    font-size: 14px;
+    line-height: 1.6; }

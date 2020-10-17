@@ -3,6 +3,12 @@
     border-radius: 10px;
 }
 
+.btn-primary {
+    padding: 9px 14px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
 .btn-icon {
     padding: 7px 11px;
 }
@@ -12,5 +18,17 @@
     font-size: 12px;
     & > svg {
         margin-left: 12px;
+    }
+}
+
+.btn-group {
+    grid-area: book-card-btns;
+    justify-self: end;
+    align-self: end;
+    margin-top: 16px;
+    margin-bottom: 8px;
+
+    & > button:first-child {
+        margin-right: 8px;
     }
 }
