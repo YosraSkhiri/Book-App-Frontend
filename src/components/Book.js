@@ -1,7 +1,7 @@
 import React from 'react';
-import RatingStars from './RatingStars';
 import bookCover from '../assets/images/coverbook.jpg';
 import BookmarkBtn from './BookmarkBtn';
+import RatingDisplay from './RatingDisplay';
 
 const Book = () => {
     return (
@@ -14,7 +14,7 @@ const Book = () => {
                     <div className="book-main__fst-row">
                         <div>
                             <div className="book-main__rating">
-                                <RatingStars />
+                                <RatingDisplay />
                             </div>
                             <h1 className="book-main__title">Factfulness</h1>
                         </div>

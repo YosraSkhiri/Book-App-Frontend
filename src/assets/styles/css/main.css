@@ -211,3 +211,31 @@ a {
   .book-main__description {
     font-size: 14px;
     line-height: 1.6; }
+
+.rating-stars__stats {
+  margin: 0 5px; }
+
+.rating-stars__avg {
+  font-size: 20px;
+  margin-right: 8px; }
+
+.rating-stars__reviews-nbr {
+  font-size: 13px;
+  color: #696969; }
+
+.rating-star {
+  display: inline-block; }
+  .rating-star:not(:last-child) {
+    margin-right: 3px; }
+  .rating-star input[type="radio"] {
+    width: 0;
+    height: 0;
+    opacity: 0; }
+  .rating-star > svg {
+    width: 19px;
+    cursor: pointer; }
+  .rating-star__label {
+    display: block;
+    width: 0;
+    height: 0;
+    visibility: hidden; }
