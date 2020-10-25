@@ -112,9 +112,22 @@ a {
   text-decoration: none; }
 
 .navbar {
-  padding: 22px 0;
+  padding: 16px 8px;
   /*-webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);*/ }
+  .navbar__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 97%;
+    padding: 0 16px;
+    margin: auto;
+    font-size: 14px; }
+  .navbar__links > li {
+    display: inline-block;
+    font-size: 12px; }
+    .navbar__links > li:not(:last-child) {
+      margin-right: 24px; }
 
 .books-result {
   display: grid;
@@ -239,3 +252,69 @@ a {
     width: 0;
     height: 0;
     visibility: hidden; }
+
+.navbar__search {
+  position: relative;
+  width: 370px; }
+
+.search-input__label {
+  display: block;
+  width: 0;
+  height: 0;
+  visibility: hidden;
+  opacity: 0; }
+
+.search-input__input {
+  width: 100%;
+  padding: 9px 14px;
+  font-size: 12px;
+  border-radius: 10px;
+  border: 1px solid #afafaf; }
+
+.search-input__input:focus {
+  outline: none; }
+
+.suggestions__wrapper {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 100%;
+  padding: 8px 0;
+  background-color: #d1d1dd;
+  border-radius: 0 0 5px 5px; }
+
+.suggestion__book,
+.suggestion__author {
+  display: flex;
+  gap: 10px;
+  padding: 4px 8px; }
+
+.suggestion__book-img {
+  display: block;
+  width: 40px;
+  height: 61px;
+  border-radius: 5px; }
+
+.suggestion__books {
+  padding-bottom: 12px; }
+
+.suggestion__authors {
+  border-top: 1px solid #b8b8b8;
+  padding-top: 12px; }
+
+.suggestion__book-author {
+  display: inline-block;
+  font-size: 12px;
+  color: #313131; }
+  .suggestion__book-author:not(:last-child) {
+    margin-right: 10px; }
+
+.suggestion__author {
+  align-items: center; }
+
+.suggestion__author-img {
+  width: 40px;
+  height: 40px;
+  background-position: center;
+  background-size: cover;
+  border-radius: 50px; }
