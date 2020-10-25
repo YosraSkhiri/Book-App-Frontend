@@ -119,15 +119,31 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 8px;
     width: 97%;
     padding: 0 16px;
     margin: auto;
     font-size: 14px; }
-  .navbar__links > li {
-    display: inline-block;
-    font-size: 12px; }
-    .navbar__links > li:not(:last-child) {
-      margin-right: 24px; }
+  .navbar__links, .navbar__icons {
+    white-space: nowrap; }
+    .navbar__links > li, .navbar__icons > li {
+      display: inline-block;
+      font-size: 12px; }
+      .navbar__links > li:not(:last-child), .navbar__icons > li:not(:last-child) {
+        margin-right: 24px; }
+  .navbar__icons {
+    display: none; }
+
+.navbar__search-icon {
+  display: inline-block; }
+  .navbar__search-icon > svg {
+    display: inline-block; }
+
+@media only screen and (max-width: 768px) {
+  .navbar__links {
+    display: none; }
+  .navbar__icons {
+    display: block; } }
 
 .books-result {
   display: grid;
@@ -280,14 +296,17 @@ a {
   left: 0;
   width: 100%;
   padding: 8px 0;
-  background-color: #d1d1dd;
-  border-radius: 0 0 5px 5px; }
+  border-radius: 0 0 5px 5px;
+  box-shadow: 0px 1px 5px #c2c2c2; }
 
 .suggestion__book,
 .suggestion__author {
   display: flex;
   gap: 10px;
   padding: 4px 8px; }
+  .suggestion__book:hover,
+  .suggestion__author:hover {
+    background-color: whitesmoke; }
 
 .suggestion__book-img {
   display: block;
@@ -299,7 +318,7 @@ a {
   padding-bottom: 12px; }
 
 .suggestion__authors {
-  border-top: 1px solid #b8b8b8;
+  border-top: 1px solid #e0e0e0;
   padding-top: 12px; }
 
 .suggestion__book-author {
@@ -318,3 +337,7 @@ a {
   background-position: center;
   background-size: cover;
   border-radius: 50px; }
+
+@media only screen and (max-width: 768px) {
+  .navbar__search {
+    display: none; } }

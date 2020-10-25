@@ -2,7 +2,7 @@ import React from 'react';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
+  Route
 } from "react-router-dom";
 import Book from './components/Book';
 import Books from './components/Books';
@@ -11,9 +11,9 @@ import Navbar from './components/Navbar';
 function App() {
   return (
     <div>
-      <Navbar />
-      <div className="container">
-        <Router>
+      <Router>
+        <Navbar />
+        <div className="container">
           <Switch>
             <Route path="/books">
               <Books />
@@ -22,8 +22,8 @@ function App() {
               <Book />
             </Route>
           </Switch>
-        </Router>
-      </div>
+        </div>
+      </Router>
     </div>
   );
 }
