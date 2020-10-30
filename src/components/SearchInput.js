@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import book from '../assets/images/coverbook.jpg';
 import author from '../assets/images/author.jpg';
 const SearchInput = () => {
@@ -11,34 +12,38 @@ const SearchInput = () => {
                     id="search"
                     className="search-input__input"
                     placeholder="Search for a book or an author"
-                    autocomplete="off"
+                    autoComplete="off"
                 />
                 <button type="submit" className="search-input__btn">
 
                 </button>
             </div>
             <div className="suggestions__wrapper">
-            <div className="suggestion__books">
-                <div className="suggestion__book">
-                    <img src={book} className="suggestion__book-img" />
-                    <div>
-                        <div className="suggestion__book-title">Factfulness</div>
-                        <ul>
-                            <li className="suggestion__book-author">Hans Rosling</li>
-                            <li className="suggestion__book-author">Ola Rosling</li>
-                            <li className="suggestion__book-author">Anna Rosling Rönnlund</li>
-                        </ul>
-                    </div>
-                </div>
+                <div className="suggestion__books">
+                    <Link to="/">
+                        <div className="suggestion__book">
+                            <img src={book} className="suggestion__book-img" />
+                            <div>
+                                <div className="suggestion__book-title">Factfulness</div>
+                                <ul>
+                                    <li className="suggestion__book-author">Hans Rosling</li>
+                                    <li className="suggestion__book-author">Ola Rosling</li>
+                                    <li className="suggestion__book-author">Anna Rosling Rönnlund</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </Link>
                 </div>
                 <div className="suggestion__authors">
-                    <div className="suggestion__author">
-                        <div
-                            className="suggestion__author-img"
-                            style={{ backgroundImage: `URL(${author})` }}
-                        />
-                        <div className="suggestion__author-name">Joanne Rowling</div>
-                    </div>
+                    <Link to="/">
+                        <div className="suggestion__author">
+                            <div
+                                className="suggestion__author-img"
+                                style={{ backgroundImage: `URL(${author})` }}
+                            />
+                            <div className="suggestion__author-name">Joanne Rowling</div>
+                        </div>
+                    </Link>
                 </div>
             </div>
         </div>

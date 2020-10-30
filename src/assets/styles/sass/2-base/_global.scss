@@ -1,12 +1,15 @@
 body {
-    width: 100%;
-    font-family: 'roboto', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 16px;
+    width: 100vw;
+    font-family: $font-family;
+    font-size: $font-size;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
 }
 
 .container {
     max-width: 97%;
-    padding: 16px;
+    padding: 1em;
     margin: auto;
 }
 

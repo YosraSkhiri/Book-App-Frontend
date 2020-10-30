@@ -1,18 +1,16 @@
 .navbar {
-    padding: 16px 8px;
-    /*-webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);*/
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    font-size: 14px;
 
     &__container {
         display: flex;
         justify-content: space-between;
         align-items: center;
         gap: 8px;
-        //margin: 0 24px;
         width: 97%;
-        padding: 0 16px;
+        padding: 1.142em;
         margin: auto;
-        font-size: 14px;
     }
 
     &__links,
@@ -23,27 +21,97 @@
             font-size: 12px;
 
             &:not(:last-child) {
-                margin-right: 24px;
+                margin-right: 2em;
             }
         }
+    }
+
+    &__link {
+        position: relative;
+
+        &:hover::after {
+            width: 100%;
+        }
+    }
+
+    &__link::after {
+        content: '';
+        position: absolute;
+        top: 130%;
+        display: block;
+        width: 0%;
+        height: 5px;
+        background-color: $primary-color;
+        background-image: $primary-gradient;
+        transition: width .2s ease-in-out;
     }
 
     &__icons {
         display: none;
     }
-}
 
-.navbar__search-icon {
-    display: inline-block;
-    
-    & > svg {
+    &__icon {
         display: inline-block;
+        
+        & > svg {
+            display: inline-block;
+        }
+    }
+
+    &__search {
+        position: relative;
+        width: 370px;
     }
 }
 
 @media only screen and (max-width: 768px) {
     .navbar__links {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 180px;
+        height: 100vh;
+        padding-top: 60px;
+        border-left: .1rem solid rgba(0,0,0,.1);
+        transform: translateX(180px);
+        transition: transform .4s ease-in;
+        overflow-x: hidden;
+        
+        & > li {
+            display: block;
+
+            &:not(:last-child) {
+                margin-right: 0;
+            }
+
+            & > a {
+                display: block;
+                width: 100%;
+                padding: 18px 0;
+                text-align: center;
+            }
+        }
+        
+
+        & a.btn {
+            width: fit-content;
+            padding: 10px 18px;
+            margin: 8px auto;
+        }
+
+    }
+
+    .navbar__links--hide {
+        transform: translateX(0px);
+    }
+
+    .navbar__link::after {
         display: none;
+    }
+
+    #menuIcon {
+        position: relative;
+        z-index: 2;
     }
 
     .navbar__icons {

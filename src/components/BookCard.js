@@ -44,7 +44,7 @@ const BookCard = (props) => {
             </div>
             <div className="btn-group">
                 <BookmarkBtn />
-                <button className="btn btn-with-icon">
+                <button className="btn btn-with-icon btn-primary">
                     <span>Read more</span>
                     <svg width="5" height="9" viewBox="0 0 5 9" fill="none">
                         <path d="M1 7.75L4 4.375L1 1" stroke="#393939" strokeLinecap="round" strokeLinejoin="round" />
