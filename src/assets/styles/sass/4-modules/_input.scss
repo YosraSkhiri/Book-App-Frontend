@@ -1,0 +1,30 @@
+.input-txt {
+    border-radius: 10px;
+    border: 1px solid $border-color;
+    padding: 4px 16px;
+
+    &--title {
+        font-size: 32px;
+        flex-basis: 850px;
+        margin-bottom: 4px;
+    }
+
+    &--description {
+        display: block;
+        width: 100%;
+        height: 180px;
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    &--ac {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        width: 100%;
+        margin: 8px 0;
+    }
+
+    &:focus {
+        outline: none;
+    }
+}

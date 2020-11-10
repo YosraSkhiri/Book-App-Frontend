@@ -1,0 +1,87 @@
+.ac__wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.ac__container {
+    position: absolute;
+    top: 40px;
+    background-color: white;
+    padding: 8px;
+    width: 100%;
+    border: 1px solid $border-color;
+    border-radius: 5px;
+}
+
+.ac__book-type {
+    padding: 8px 8px;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+
+    &:hover {
+        background-color: rgb(245, 245, 245);
+    }
+}
+
+.ac__choices-tag-wrapper {
+    display: inline-block;
+    margin: 8px 0;
+    &:not(:last-child) {
+        margin-right: 10px;
+    }
+}
+
+.ac__input-wrapper {
+    position: relative;
+    width: 100%;
+
+    .ac__input-container {
+        position: absolute;
+        width: 100%;
+        border: 1px solid rgb(224, 224, 224);
+        border-radius: 10px;
+        background-color: white;
+        font-size: 14px;
+        font-weight: 400;
+    }
+}
+
+.ac__choices-type-tag,
+.ac__choices-author-tag,
+.ac-author {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 10px;
+    border-radius: 6px;
+}
+
+.ac-type {
+    padding: 12px 16px;
+    cursor: pointer;
+}
+
+.ac-author:hover, 
+.ac-type:hover {
+    background-color: rgb(223, 223, 250);
+}
+
+.ac__choices-type-tag {
+    background-color: rgb(255, 255, 139);
+}
+
+.ac__choices-author-tag {
+    background-color: lightblue;
+}
+
+.author-tag__img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.ac-author {
+    cursor: pointer;
+}

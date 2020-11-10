@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import book from '../assets/images/coverbook.jpg';
 import author from '../assets/images/author.jpg';
 const SearchInput = () => {
+    const [books, setBooks] = useState();
+    const [authors, setAuthors] = useState();
+
     return (
         <div className="navbar__search">
             <div className="search-input__wrapper">
@@ -18,34 +21,46 @@ const SearchInput = () => {
 
                 </button>
             </div>
-            <div className="suggestions__wrapper">
-                <div className="suggestion__books">
-                    <Link to="/">
-                        <div className="suggestion__book">
-                            <img src={book} className="suggestion__book-img" />
-                            <div>
-                                <div className="suggestion__book-title">Factfulness</div>
-                                <ul>
-                                    <li className="suggestion__book-author">Hans Rosling</li>
-                                    <li className="suggestion__book-author">Ola Rosling</li>
-                                    <li className="suggestion__book-author">Anna Rosling Rönnlund</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </Link>
-                </div>
-                <div className="suggestion__authors">
-                    <Link to="/">
-                        <div className="suggestion__author">
-                            <div
-                                className="suggestion__author-img"
-                                style={{ backgroundImage: `URL(${author})` }}
-                            />
-                            <div className="suggestion__author-name">Joanne Rowling</div>
-                        </div>
-                    </Link>
-                </div>
-            </div>
+
+            {
+                (books || authors) ?
+
+                    <div className="suggestions__wrapper">
+                        {
+                            books ?
+                                <div className="suggestion__books">
+                                    <Link to="/">
+                                        <div className="suggestion__book">
+                                            <img src={book} className="suggestion__book-img" />
+                                            <div>
+                                                <div className="suggestion__book-title">Factfulness</div>
+                                                <ul>
+                                                    <li className="suggestion__book-author">Hans Rosling</li>
+                                                    <li className="suggestion__book-author">Ola Rosling</li>
+                                                    <li className="suggestion__book-author">Anna Rosling Rönnlund</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </Link>
+                                </div> : null
+                        }
+
+                        {
+                            authors ?
+                                <div className="suggestion__authors">
+                                    <Link to="/">
+                                        <div className="suggestion__author">
+                                            <div
+                                                className="suggestion__author-img"
+                                                style={{ backgroundImage: `URL(${author})` }}
+                                            />
+                                            <div className="suggestion__author-name">Joanne Rowling</div>
+                                        </div>
+                                    </Link>
+                                </div> : null
+                        }
+                    </div> : null
+            }
         </div>
     );
 }

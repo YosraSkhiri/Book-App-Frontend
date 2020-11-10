@@ -3,7 +3,7 @@
     gap: 32px;
 
     &__img {
-        width: 450px;
+        flex-basis: 200px;
 
         & > img {
             width: 100%;
@@ -20,5 +20,9 @@
     &__description {
         font-size: 14px;
         line-height: 1.6;
+    }
+
+    &__content {
+        flex: 1;
     }
 }
