@@ -4,6 +4,7 @@ import {
   Switch,
   Route
 } from "react-router-dom";
+import AddAuthor from './components/AddAuthor';
 import AddBook from './components/AddBook';
 import Book from './components/Book';
 import Books from './components/Books';
@@ -24,6 +25,9 @@ function App() {
             </Route>
             <Route path="/add">
               <AddBook />
+            </Route>
+            <Route path="/add2">
+              <AddAuthor />
             </Route>
           </Switch>
         </div>
