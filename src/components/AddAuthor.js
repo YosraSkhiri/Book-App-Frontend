@@ -4,33 +4,43 @@ import axios from 'axios';
 const AddAuthor = () => {
     const [newAuthor, setNewAuthor] = useState(
         {
-            name: "",
-            birthdate: ""
+            name: '',
+            birthdate: '',
+            photo: '',
         }
     );
     
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:5000/authors/add/', newAuthor)
+        const formData = new FormData();
+        formData.append('photo', newAuthor.photo);
+        formData.append('birthdate', newAuthor.birthdate);
+        formData.append('name', newAuthor.name);
+        
+        axios.post('http://localhost:5000/authors/add/', formData)
              .then(res => {
                 console.log(res);
              })
              .catch(err => {
                 console.log(err);
-             }) 
-        console.log(newAuthor)
+             });
     }
 
     const handleChange = (e) => {
         setNewAuthor({...newAuthor, [e.target.name]: e.target.value});
     }
 
+    const handlePhoto = (e) => {
+        setNewAuthor({...newAuthor, photo: e.target.files[0]});
+    }
+
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} encType='multipart/form-data'>
             <input 
                 type="file" 
                 accept=".png, .jpg, .jpeg"
                 name="photo"
+                onChange={handlePhoto}
             />
 
             <input 
