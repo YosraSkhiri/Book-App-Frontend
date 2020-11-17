@@ -22,3 +22,8 @@ button {
 textarea {
     font-family: inherit;
 }
+
+input[type="submit"] {
+    background-color: white;
+    cursor: pointer;
+}

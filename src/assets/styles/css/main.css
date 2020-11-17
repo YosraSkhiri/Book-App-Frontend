@@ -19,6 +19,10 @@ button {
 textarea {
   font-family: inherit; }
 
+input[type="submit"] {
+  background-color: white;
+  cursor: pointer; }
+
 @font-face {
   font-family: 'roboto';
   src: url("../../fonts/roboto/roboto-black-webfont.eot");
@@ -497,3 +501,65 @@ a {
 
 .ac-author {
   cursor: pointer; }
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  gap: 42px;
+  margin-bottom: 16px; }
+
+.flex__1 {
+  flex: 200px 100px 200px; }
+
+.add-pic {
+  position: relative;
+  display: block;
+  width: 200px;
+  height: 200px;
+  background-color: #a7d0dd;
+  border-radius: 50%;
+  cursor: pointer; }
+  .add-pic > svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+
+.inputs {
+  flex: 1; }
+
+.inputs > input[type="date"] {
+  display: block; }
+
+.inputs > input {
+  width: 100%;
+  margin-bottom: 18px; }
+
+.author__form {
+  width: 80%;
+  margin: auto; }
+
+.visually-hidden {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px); }
+
+/* Separate rule for compatibility, :focus-within is required on modern Firefox and Chrome */
+input.visually-hidden:focus + label {
+  outline: thin dotted; }
+
+input.visually-hidden:focus-within + label {
+  outline: thin dotted; }
+
+.submit {
+  margin-top: 28px; }
+
+@media only screen and (max-width: 768px) {
+  .flex {
+    gap: 0;
+    flex-direction: column; }
+  .flex__1 {
+    margin: auto;
+    margin-bottom: 16px; } }

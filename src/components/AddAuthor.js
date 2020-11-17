@@ -35,32 +35,50 @@ const AddAuthor = () => {
     }
 
     return (
-        <form onSubmit={handleSubmit} encType='multipart/form-data'>
-            <input 
-                type="file" 
-                accept=".png, .jpg, .jpeg"
-                name="photo"
-                onChange={handlePhoto}
-            />
+        <form onSubmit={handleSubmit} encType='multipart/form-data' className="author__form">
+            <div className="flex">
+                <div className="flex__1">
+                    <input 
+                        type="file" 
+                        accept=".png, .jpg, .jpeg"
+                        name="photo"
+                        id="photo"
+                        className="visually-hidden"
+                        onChange={handlePhoto}
+                    />
+                    <label for="photo" className="add-pic">
+                        <svg width="150" height="150" viewBox="0 0 24 24" fill="none" stroke="#459db7" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5.52 19c.64-2.2 1.84-3 3.22-3h6.52c1.38 0 2.58.8 3.22 3"/>
+                            <circle cx="12" cy="10" r="3"/>
+                            <circle cx="12" cy="12" r="10"/>
+                        </svg>
+                    </label>
+                </div>
+                <div className="inputs">
+                    <input 
+                        type="text"
+                        placeholder="name"
+                        name="name"
+                        className="input-txt input-txt--title"
+                        value={newAuthor.name}
+                        onChange={handleChange}
+                    />
 
-            <input 
-                type="text"
-                placeholder="name"
-                name="name"
-                value={newAuthor.name}
-                onChange={handleChange}
-            />
-
-            <input 
-                type="date"
-                name="birthdate"
-                value={newAuthor.date}
-                onChange={handleChange}
-            />
-
-            <input 
-                type="submit"
-            />
+                    <input 
+                        type="date"
+                        name="birthdate"
+                        className="input-txt"
+                        value={newAuthor.date}
+                        onChange={handleChange}
+                    />
+                    <input 
+                        type="submit"
+                        value="Add Author"
+                        className="btn btn-primary submit"
+                    />
+                </div>
+            </div>
+            
         </form>
     );
 }
