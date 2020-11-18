@@ -509,21 +509,35 @@ a {
   margin-bottom: 16px; }
 
 .flex__1 {
-  flex: 200px 100px 200px; }
+  flex: 200px 100px 200px;
+  position: relative; }
 
 .add-pic {
   position: relative;
   display: block;
   width: 200px;
   height: 200px;
-  background-color: #a7d0dd;
   border-radius: 50%;
-  cursor: pointer; }
+  background-color: #a7d0dd;
+  cursor: pointer;
+  opacity: .4; }
   .add-pic > svg {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); }
+
+.preview-pic {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  display: block;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  opacity: 1; }
 
 .inputs {
   flex: 1; }
