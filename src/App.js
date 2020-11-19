@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import AddAuthor from './components/AddAuthor';
 import AddBook from './components/AddBook';
+import Author from './components/Author';
 import Book from './components/Book';
 import Books from './components/Books';
 import Navbar from './components/Navbar';
@@ -17,17 +18,20 @@ function App() {
         <Navbar />
         <div className="container">
           <Switch>
-            <Route path="/books">
+            <Route path="/books" exact>
               <Books />
             </Route>
-            <Route path={`/book/:bookTitle/:bookId`}>
+            <Route path={`/books/:bookTitle/:bookId`} exact>
               <Book />
             </Route>
-            <Route path="/add">
+            <Route path="/books/add" exact>
               <AddBook />
             </Route>
-            <Route path="/add2">
+            <Route path="/authors/add">
               <AddAuthor />
+            </Route>
+            <Route path="/authors/:authorName/:authorId">
+              <Author />
             </Route>
           </Switch>
         </div>
