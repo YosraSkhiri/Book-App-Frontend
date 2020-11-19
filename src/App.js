@@ -27,10 +27,10 @@ function App() {
             <Route path="/books/add" exact>
               <AddBook />
             </Route>
-            <Route path="/authors/add">
+            <Route path="/authors/add" exact>
               <AddAuthor />
             </Route>
-            <Route path="/authors/:authorName/:authorId">
+            <Route path="/authors/:authorName/:authorId" exact>
               <Author />
             </Route>
           </Switch>
