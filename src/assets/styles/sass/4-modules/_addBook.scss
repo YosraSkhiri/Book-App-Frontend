@@ -1,0 +1,22 @@
+.add-book-photo {
+    position: absolute;
+    display: block;
+    width: 200px;
+    height: 304px;
+    background-color: rgba(54, 193, 236, 0.5);
+    cursor: pointer;
+    
+    & > svg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    &-prv {
+        display: block;
+        width: 200px;
+        height: 304px;
+        object-fit: cover;
+    }
+}
