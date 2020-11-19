@@ -3,6 +3,14 @@ import AutocompleteInput from './AutocompleteAuthor';
 import BookPhotoPlaceholder from '../assets/images/book_photo_placeholder.png';
 
 const AddBook = () => {
+    const [newBook, setNewBook] = useState({
+        cover: '',
+        title: '',
+        authors: [],
+        summary: '',
+        categories: []
+    });
+
     const [{ src, alt }, setPreview] = useState({
         src: BookPhotoPlaceholder,
         alt: 'Upload Book'
@@ -10,9 +18,23 @@ const AddBook = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        const formData = new FormData();
+        formData.append('cover', newBook.cover);
+        formData.append('title', newBook.title);
+        formData.append('authors', newBook.authors);
+        formData.append('summary', newBook.summary);
+        formData.append('categories', newBook.categories);
+    }
+
+    const handleChange = (e) => {
+        setNewBook({
+            ...newBook,
+            [e.target.name]: e.target.value 
+        })
     }
 
     const handlePhoto = (e) => {
+        setNewBook({ ...newBook, cover: e.target.files[0] });
         if(e.target.files[0]) {
             setPreview({
                 src: URL.createObjectURL(e.target.files[0]),
@@ -22,17 +44,17 @@ const AddBook = () => {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} encType="multipart/form-data">
             <div className="book-main">
                 <div className="book-main__img">
                     <input
                         type="file"
                         accept=".png, .jpg, .jpeg"
                         className="visually-hidden"
-                        id="bookPhoto"
+                        id="bookCover"
                         onChange={handlePhoto}
                     />
-                    <label htmlFor="bookPhoto" className="add-book-photo">
+                    <label htmlFor="bookCover" className="add-book-photo">
                         <svg width="65" height="65" viewBox="0 0 24 24" fill="none" stroke="#EEEEEE" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
                             <circle cx="12" cy="12" r="10"></circle>
                             <line x1="12" y1="8" x2="12" y2="16"></line>
@@ -47,6 +69,8 @@ const AddBook = () => {
                             type="text"
                             placeholder="Title"
                             className="input-txt input-txt--title"
+                            name="title"
+                            onChange={handleChange}
                         />
                         <button className="btn btn-primary" type="submit">Add the book</button>
                     </div>
@@ -58,6 +82,8 @@ const AddBook = () => {
                     <textarea
                         className="input-txt input-txt--description"
                         placeholder="Summary..."
+                        name="summary"
+                        onChange={handleChange}
                     />
                     <AutocompleteInput acType="bookType" />
                 </div>
