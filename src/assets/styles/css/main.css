@@ -608,3 +608,18 @@ input.visually-hidden:focus-within + label {
     width: 200px;
     height: 304px;
     object-fit: cover; }
+
+.category__label {
+  display: block;
+  margin-bottom: 16px;
+  font-size: 24px;
+  font-weight: 600;
+  color: #00c0fa;
+  text-align: center; }
+
+.category__input {
+  display: block;
+  margin-bottom: 12px;
+  width: 100%;
+  padding: 16px;
+  font-size: 23px; }

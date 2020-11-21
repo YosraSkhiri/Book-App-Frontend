@@ -9,6 +9,7 @@ import AddBook from './components/AddBook';
 import Author from './components/Author';
 import Book from './components/Book';
 import Books from './components/Books';
+import CategoriesCreate from './components/CategoriesCreate';
 import Navbar from './components/Navbar';
 
 function App() {
@@ -29,6 +30,9 @@ function App() {
             </Route>
             <Route path="/authors/add" exact>
               <AddAuthor />
+            </Route>
+            <Route path="/categories/add" exact>
+              <CategoriesCreate />
             </Route>
             <Route path="/authors/:authorName/:authorId" exact>
               <Author />
