@@ -10,6 +10,7 @@ import Author from './components/Author';
 import Book from './components/Book';
 import Books from './components/Books';
 import CategoriesCreate from './components/CategoriesCreate';
+import Login from './components/Login';
 import Navbar from './components/Navbar';
 import Signup from './components/Signup';
 
@@ -22,6 +23,9 @@ function App() {
           <Switch>
             <Route path="/signup" exact>
               <Signup />
+            </Route>
+            <Route path="/login" exact>
+              <Login />
             </Route>
             <Route path="/books" exact>
               <Books />
