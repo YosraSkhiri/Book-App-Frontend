@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import NotificationInfo from './NotificationInfo';
 
 const Signup = () => {
     const [signupData, setSignupData] = useState({
@@ -9,18 +10,21 @@ const Signup = () => {
         password: ''
     });
 
+    const [res, setRes] = useState();
+
     const handleChange = (e) => {
         setSignupData({...signupData, [e.target.name]: e.target.value});
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        
         axios.post('http://localhost:5000/readers/register/', signupData)
             .then(res => {
-                console.log('done!')
+                setRes(res.data.msg)
             })
             .catch(err => {
-                console.log(err)
+                setRes(err.response.data.msg)
             });
     }
 
@@ -76,6 +80,9 @@ const Signup = () => {
                     className="btn btn-primary"
                 />
             </form>
+            {
+                res ? <NotificationInfo res={res}/> : null
+            }
         </div>
     );
 }
