@@ -623,3 +623,11 @@ input.visually-hidden:focus-within + label {
   width: 100%;
   padding: 16px;
   font-size: 23px; }
+
+.auth-container {
+  max-width: 350px;
+  padding: 16px;
+  margin: auto; }
+
+.auth-heading {
+  margin-bottom: 16px; }

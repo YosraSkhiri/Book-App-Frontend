@@ -45,7 +45,7 @@ const Navbar = () => {
                     <ul className={ menuClass }>
                         <li className="navbar__link"><Link to="library">Library</Link></li>
                         <li className="navbar__link"><Link to="login">Log in</Link></li>
-                        <li><Link to="signup" className="btn btn-primary">Sign up</Link></li>
+                        <li><Link to="/signup" className="btn btn-primary">Sign up</Link></li>
                     </ul>
                 </div>
             </div>

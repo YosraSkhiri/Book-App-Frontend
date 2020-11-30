@@ -11,6 +11,7 @@ import Book from './components/Book';
 import Books from './components/Books';
 import CategoriesCreate from './components/CategoriesCreate';
 import Navbar from './components/Navbar';
+import Signup from './components/Signup';
 
 function App() {
   return (
@@ -19,6 +20,9 @@ function App() {
         <Navbar />
         <div className="container">
           <Switch>
+            <Route path="/signup" exact>
+              <Signup />
+            </Route>
             <Route path="/books" exact>
               <Books />
             </Route>
