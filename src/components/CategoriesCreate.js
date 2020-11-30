@@ -13,10 +13,10 @@ const CategoriesCreate = () => {
         e.preventDefault();
         axios.post('http://localhost:5000/categories/add/', { 'category': categoryVal })
             .then(res => {
-                setMsg(res.data);
+                setMsg(res.data.msg);
             })
             .catch(err => {
-                console.log(err)
+                setMsg(err.response.data.msg);
             });
     }
 
