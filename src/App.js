@@ -8,8 +8,10 @@ import AddAuthor from './components/AddAuthor';
 import AddBook from './components/AddBook';
 import Author from './components/Author';
 import Book from './components/Book';
-import Books from './components/Books';
 import CategoriesCreate from './components/CategoriesCreate';
+import Footer from './components/Footer';
+import Header from './components/Header';
+import Library from './components/Library';
 import Login from './components/Login';
 import Navbar from './components/Navbar';
 import Signup from './components/Signup';
@@ -21,14 +23,18 @@ function App() {
         <Navbar />
         <div className="container">
           <Switch>
+            <Route path="/" exact>
+              <Header />
+              <Footer />
+            </Route>
             <Route path="/signup" exact>
               <Signup />
             </Route>
             <Route path="/login" exact>
               <Login />
             </Route>
-            <Route path="/books" exact>
-              <Books />
+            <Route path="/library" exact>
+              <Library />
             </Route>
             <Route path={`/books/:bookTitle/:bookId`} exact>
               <Book />
@@ -42,7 +48,7 @@ function App() {
             <Route path="/categories/add" exact>
               <CategoriesCreate />
             </Route>
-            <Route path="/authors/:authorName/:authorId" exact>
+            <Route path="/authors/:name/:id" exact>
               <Author />
             </Route>
           </Switch>

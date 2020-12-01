@@ -19,7 +19,7 @@ const Navbar = () => {
         <nav className="navbar">
             <div className="navbar__container">
                 <Link to="/">
-                    <Logo />
+                    <Logo width="160"/>
                 </Link>
                 <SearchInput />
                 <div>

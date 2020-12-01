@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Logo = () => {
+const Logo = (props) => {
     return (
-        <svg width="110" viewBox="0 0 137.3 40.69">
+        <svg width={props.width} viewBox="0 0 137.3 40.69">
             <defs>
                 <linearGradient id="a" x1="1101.24" x2="1122.12" y1="1185.48" y2="1178.74" gradientTransform="rotate(8.1 2331.761 1138.66)" gradientUnits="userSpaceOnUse">
                     <stop offset=".1" stopColor="#0b4496" />

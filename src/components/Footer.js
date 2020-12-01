@@ -7,15 +7,17 @@ const Footer = () => {
         <footer>
             <div className="footer_container">
                 <div>
-                    <Logo />
+                    <Link to="/">
+                        <Logo width="230"/>
+                    </Link>
                 </div>
                 <div>
                     <h2 className="footer_title">Useful Links</h2>
                     <ul className="footer_liks">
-                        <li><Link>Home</Link></li>
-                        <li><Link>Login</Link></li>
-                        <li><Link>Signup</Link></li>
-                        <li><Link>Contribute</Link></li>
+                        <li><Link to="/">Home</Link></li>
+                        <li><Link to="/login">Login</Link></li>
+                        <li><Link to="/Signup">Signup</Link></li>
+                        <li><Link to="/contribute">Contribute</Link></li>
                     </ul>
                 </div>
                 <div>
