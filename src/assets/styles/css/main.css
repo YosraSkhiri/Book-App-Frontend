@@ -678,3 +678,15 @@ input.visually-hidden:focus-within + label {
   display: flex;
   gap: 16px;
   justify-items: center; }
+
+.author_flex {
+  display: flex;
+  gap: 40px;
+  padding: 20px 0; }
+
+.author_img {
+  display: block;
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 50%; }
