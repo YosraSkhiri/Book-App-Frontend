@@ -37,7 +37,7 @@
     }
 }
 
-.btn-scondary {
+.btn-secondary {
     padding: 9px 14px;
     font-size: 12px;
     font-weight: 600;
@@ -57,6 +57,7 @@
 
 .btn-icon {
     padding: 7px 11px;
+    border: 1px solid $border-color;
 }
 
 .btn-with-icon {
