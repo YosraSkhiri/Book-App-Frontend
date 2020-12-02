@@ -11,7 +11,7 @@ const Header = () => {
                     we have a friendly community that reviews and discuss books, 
                     find the books you enjoy and share your thoughts.
                 </p>
-                <button className="btn btn-primary">
+                <button className="btn btn-primary btn-bg">
                     <Link to="/signup">
                         Signup
                     </Link> 
