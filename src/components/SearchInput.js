@@ -44,8 +44,8 @@ const SearchInput = () => {
                     placeholder="Search for a book or an author"
                     autoComplete="off"
                     onChange={handleChange}
-                    onFocus={() => setShow(true)}
-                    onBlur={() => setShow(false)}
+                    /*onFocus={() => setShow(true)}
+                    onBlur={() => setShow(false)}*/
                 />
                 <button type="submit" className="search-input__btn">
 
@@ -55,7 +55,7 @@ const SearchInput = () => {
             {
                 (inputValue !== "") ?
 
-                    <div className="suggestions__wrapper" style={!show ? {display: 'none'}: {display: 'block'}}>
+                    <div className="suggestions__wrapper" style={{}}>
                         {
                             books ?
                                 <div className="suggestion__books">

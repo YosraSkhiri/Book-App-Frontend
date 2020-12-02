@@ -13,8 +13,8 @@ const Author = () => {
              .then(res => {
                  setAuthor(res.data);
             })
-             .catch(() => {
-
+             .catch((err) => {
+                console.log(err)
              })
         
     }, []);

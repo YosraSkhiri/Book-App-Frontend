@@ -222,6 +222,7 @@ a {
   grid-template-columns: 110px auto;
   grid-template-areas: "book-cover book-info"  "book-cover book-card-btns";
   max-width: 420px;
+  height: 194px;
   padding: 8px;
   overflow: hidden; }
 
@@ -238,10 +239,11 @@ a {
   margin-left: 16px; }
 
 .book-card__title {
+  margin-top: -12px;
   font-family: 'Oswald', sans-serif;
   font-size: 1.5rem;
   font-weight: 500;
-  line-height: .8; }
+  line-height: 1.4; }
 
 .book-card__authors {
   margin: 5px 0 10px 0;
@@ -756,4 +758,5 @@ input.visually-hidden:focus-within + label {
   padding-left: 12px; }
 
 .library-container {
+  display: flex;
   padding-top: 30px; }

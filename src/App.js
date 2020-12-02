@@ -14,6 +14,7 @@ import Header from './components/Header';
 import Library from './components/Library';
 import Login from './components/Login';
 import Navbar from './components/Navbar';
+import ReadingList from './components/ReadingList';
 import Signup from './components/Signup';
 
 function App() {
@@ -32,6 +33,9 @@ function App() {
             </Route>
             <Route path="/login" exact>
               <Login />
+            </Route>
+            <Route path="/readers" exact>
+              <ReadingList />
             </Route>
             <Route path="/library" exact>
               <Library />

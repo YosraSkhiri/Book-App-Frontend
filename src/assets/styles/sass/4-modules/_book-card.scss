@@ -5,6 +5,7 @@
     grid-template-areas: "book-cover book-info" 
                          "book-cover book-card-btns";
     max-width: 420px;
+    height: 194px;
     padding: 8px;
     overflow: hidden;
 }
@@ -26,10 +27,11 @@
 }
 
 .book-card__title {
+    margin-top: -12px;
     font-family: 'Oswald', sans-serif;
     font-size: 1.5rem;
     font-weight: 500;
-    line-height: .8;
+    line-height: 1.4;
 }
 
 .book-card__authors {

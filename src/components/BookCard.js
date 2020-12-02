@@ -1,26 +1,46 @@
 import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import { Link } from 'react-router-dom';
-import bookCover from '../assets/images/coverbook.jpg';
 import BookmarkBtn from './BookmarkBtn';
 
 const BookCard = (props) => {
+
+    const [authors , setAuthors] = useState();
+    useEffect(() => {
+        axios.get('http://localhost:5000/authors/', {
+            params: {
+                authorIds: props.book.author_ids
+            }
+        })
+        .then(res => setAuthors(res.data))
+        .catch()
+    }, [props.book.author_ids]);
+
     return (
         <div className="book-card__wrapper">
             <div className="book-card__cover-img">
-                <Link to={`/book/${props.title}/${props.id}`}>
-                    <img src={bookCover} alt="Cover of" />
+                <Link to={`/books/${props.book.title}/${props.book._id}`}>
+                    {
+                        props.book.cover ? 
+                        <img 
+                            src={`http://localhost:5000/images/books/${props.book.cover}`} 
+                            alt="Cover" 
+                        /> : 'Loading...'
+                    }
+                    
                 </Link>
             </div>
             <div className="book-card__content">
-                <Link to={`/book/${props.title}/${props.id}`}>
-                    <div className="book-card__title">{props.title}</div>
+                <Link to={`/books/${props.book.title}/${props.book._id}`}>
+                    <div className="book-card__title">{props.book.title}</div>
                 </Link>
 
                 <ul className="book-card__authors">
                     {
-                        /*props.authors.map(author => {
-                            <li className="book-card__author">{ author }</li>
-                        })*/
+                        authors ?
+                        authors.map(author => (
+                            <li className="book-card__author" key={author._id}>{ author.name }</li>
+                        )) : 'Loading...'
                     }
                 </ul>
 
