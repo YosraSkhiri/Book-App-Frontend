@@ -25,4 +25,16 @@
     &__content {
         flex: 1;
     }
+
+    &__types {
+        margin: 20px 0;
+    }
+
+    &__type {
+        display: inline-block;
+        margin-right: 16px;
+        padding: 5px 10px;
+        border-radius: 8px;
+        border: 1px solid $primary-color;
+    }
 }

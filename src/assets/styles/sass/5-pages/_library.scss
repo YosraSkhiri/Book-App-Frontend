@@ -1,0 +1,19 @@
+.filter-category {
+    padding: 10px 12px;
+
+    & > a:hover {
+        color: $primary-color;
+    }
+}
+
+.filter-categories-title {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: $primary-color;
+    padding-left: 12px;
+}
+
+.library-container {
+    padding-top: 30px;
+}

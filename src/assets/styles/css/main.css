@@ -347,6 +347,14 @@ a {
     line-height: 1.6; }
   .book-main__content {
     flex: 1; }
+  .book-main__types {
+    margin: 20px 0; }
+  .book-main__type {
+    display: inline-block;
+    margin-right: 16px;
+    padding: 5px 10px;
+    border-radius: 8px;
+    border: 1px solid #00c0fa; }
 
 .rating-stars__stats {
   margin: 0 5px; }
@@ -474,6 +482,10 @@ a {
 .select-mult {
   width: 100%;
   font-size: 17px; }
+
+.input-date {
+  display: block;
+  margin-bottom: 10px; }
 
 .ac__wrapper {
   position: relative;
@@ -730,3 +742,18 @@ input.visually-hidden:focus-within + label {
 
 .comment__form {
   margin-bottom: 20px; }
+
+.filter-category {
+  padding: 10px 12px; }
+  .filter-category > a:hover {
+    color: #00c0fa; }
+
+.filter-categories-title {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #00c0fa;
+  padding-left: 12px; }
+
+.library-container {
+  padding-top: 30px; }
