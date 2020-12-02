@@ -270,20 +270,45 @@ a {
   margin-bottom: -4px; }
 
 .btn {
-  border: 1px solid #afafaf;
   border-radius: 10px;
   white-space: nowrap; }
+  .btn-default {
+    padding: 9px 14px;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+    transition: all .2s ease-in;
+    background-color: white;
+    border: 1px solid #afafaf; }
+  .btn-bg {
+    padding: 12px 18px !important;
+    font-size: 18px !important;
+    font-weight: 600; }
 
 .btn-primary {
   padding: 9px 14px;
   font-size: 12px;
   font-weight: 600;
   text-align: center;
-  transition: all .2s ease-in; }
+  background-image: linear-gradient(45deg, #241de5, #00c0fa);
+  border: 1px solid #3c36ec;
+  color: white; }
   .btn-primary:hover {
-    color: white;
-    background-image: linear-gradient(45deg, #241de5, #00c0fa); }
+    background-image: linear-gradient(45deg, #00c0fa, #241de5); }
   .btn-primary:hover::after {
+    width: 100%; }
+
+.btn-scondary {
+  padding: 9px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+  background-image: linear-gradient(45deg, #fc5c00, #fda321);
+  border: 1px solid  #e68600;
+  color: white; }
+  .btn-scondary:hover {
+    background-image: linear-gradient(45deg, #fda321, #fc5c00); }
+  .btn-scondary:hover::after {
     width: 100%; }
 
 .btn-icon {

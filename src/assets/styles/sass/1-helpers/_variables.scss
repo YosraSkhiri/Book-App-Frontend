@@ -2,6 +2,9 @@ $primary-color: #00c0fa;
 $secondary-color: #fda321;
 $border-color: #afafaf;
 $primary-gradient: linear-gradient(45deg, #241de5, $primary-color);
+$primary-gradient-hover: linear-gradient(45deg, $primary-color, #241de5);
+$secondary-gradient: linear-gradient(45deg, #fc5c00, $secondary-color);
+$secondary-gradient-hover: linear-gradient(45deg, $secondary-color,  #fc5c00);
 
 $font-family: 'roboto', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 $font-size: 16px;
