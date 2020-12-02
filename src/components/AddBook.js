@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import AutocompleteInput from './AutocompleteAuthor';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import NotificationInfo from './NotificationInfo';
 import BookPhotoPlaceholder from '../assets/images/book_photo_placeholder.png';
 
 const AddBook = () => {
@@ -8,13 +9,29 @@ const AddBook = () => {
         title: '',
         authors: [],
         summary: '',
-        categories: []
+        categories: [],
+        release_date: ''
     });
 
     const [{ src, alt }, setPreview] = useState({
         src: BookPhotoPlaceholder,
         alt: 'Upload Book'
     });
+
+    const [categories, setCategories] = useState([]);
+    const [authors, setAuthors] = useState([]);
+
+    const [res, setRes] = useState();
+
+    useEffect(() => {
+        axios.get('http://localhost:5000/categories/')
+            .then( res => setCategories(res.data))
+            .catch()
+
+        axios.get('http://localhost:5000/authors/')
+            .then( res => setAuthors(res.data))
+            .catch()
+    }, [])
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -24,6 +41,14 @@ const AddBook = () => {
         formData.append('authors', newBook.authors);
         formData.append('summary', newBook.summary);
         formData.append('categories', newBook.categories);
+
+        axios.post('http://localhost:5000/books/add/', formData)
+            .then(res => {
+                setRes(res.data.msg);
+            })
+            .catch(err => {
+                setRes(err.response.data.msg);
+            });
     }
 
     const handleChange = (e) => {
@@ -43,7 +68,26 @@ const AddBook = () => {
         }
     }
 
+    const addAuthor = (e) => {
+        let authorArray = Array.from(e.target.selectedOptions, option => option.value);
+
+        setNewBook({
+            ...newBook,
+            authors: authorArray
+        });
+    }
+
+    const addCategory = (e) => {
+        let categoryArray = Array.from(e.target.selectedOptions, option => option.value);
+
+        setNewBook({
+            ...newBook,
+            categories: categoryArray
+        });
+    }
+
     return (
+        <>
         <form onSubmit={handleSubmit} encType="multipart/form-data">
             <div className="book-main">
                 <div className="book-main__img">
@@ -71,12 +115,35 @@ const AddBook = () => {
                             className="input-txt input-txt--title"
                             name="title"
                             onChange={handleChange}
+                            value={newBook.title}
                         />
-                        <button className="btn btn-primary" type="submit">Add the book</button>
+                        <button className="btn btn-secondary" type="submit">Add the book</button>
                     </div>
 
                     <div className="book-card__authors">
-                        <AutocompleteInput acType="author" />
+                        <label htmlFor="release_date">Release date:</label>
+                        <input
+                            type="date"
+                            name="release_date"
+                            id="release_date"
+                            className="input-txt input-date"
+                            value={newBook.release_date}
+                            onChange={handleChange}
+                        />
+                        <label htmlFor="authors">Choose The Authors: (crl + right click)</label>
+                        <select name="authors" id="authors" multiple onChange={addAuthor} className="input-txt select-mult">
+                            {
+                                authors.map(author => (
+                                    <option 
+                                        value={author._id}
+                                        key={author._id}
+                                    >
+                                        {author.name}
+                                    </option>
+                                ))
+                            }
+                            
+                        </select>
                     </div>
 
                     <textarea
@@ -84,11 +151,31 @@ const AddBook = () => {
                         placeholder="Summary..."
                         name="summary"
                         onChange={handleChange}
+                        value={newBook.summary}
                     />
-                    <AutocompleteInput acType="bookType" />
+
+                    <label htmlFor="categories">Choose The categories: (crl + right click)</label>
+                    <select name="categories" id="categories" multiple onChange={addCategory} className="input-txt select-mult">
+                        {
+                            categories.map(category => (
+                                <option 
+                                    value={category._id}
+                                    key={category._id}
+                                >
+                                    {category.category}
+                                </option>
+                            ))
+                        }
+                        
+                    </select>
+                    
                 </div>
             </div>
         </form>
+        {
+            res ? <NotificationInfo res={res}/> : null
+        }
+        </>
     );
 }
 
