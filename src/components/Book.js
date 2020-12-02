@@ -1,14 +1,62 @@
-import React from 'react';
-import bookCover from '../assets/images/coverbook.jpg';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import BookmarkBtn from './BookmarkBtn';
+import Comments from './Comments';
 import RatingDisplay from './RatingDisplay';
+import { Link } from 'react-router-dom';
 
 const Book = () => {
+    const [fetchedBook, setFetchedBook] = useState();
+    const [authors, setAuthors] = useState();
+    const [categories, setCategories] = useState();
+
+    useEffect(() => {
+        const urlParts = window.location.href.split('/');
+        const bookName = urlParts[urlParts.length - 2];
+        const bookId = urlParts[urlParts.length - 1];
+
+        axios.get('http://localhost:5000/books/'+bookName+'/'+bookId)
+             .then(res => {
+                 setFetchedBook(res.data);
+
+                 const authorIds = res.data.author_ids;
+                 const typeIds = res.data.type_ids;
+
+                 axios.get('http://localhost:5000/authors/', {
+                     params: {
+                         authorIds
+                     }
+                 })
+                 .then(res => setAuthors(res.data))
+                 .catch()
+
+                 axios.get('http://localhost:5000/categories/', {
+                    params: {
+                        typeIds
+                    }
+                })
+                .then(res => setCategories(res.data))
+                .catch()
+                 
+                 
+            })
+             .catch((err) => {
+                console.log(err)
+             }); 
+    }, []);
+
     return (
         <div>
             <div className="book-main">
                 <div className="book-main__img">
-                    <img src={bookCover} alt="Cover of" />
+                    {
+                        fetchedBook ?
+                        <img 
+                            src={`http://localhost:5000/images/books/${fetchedBook.cover}`} 
+                            alt="Cover" 
+                        /> : 'Loading...'
+                    }
+                    
                 </div>
                 <div className="book-main__content">
                     <div className="book-main__fst-row">
@@ -16,7 +64,7 @@ const Book = () => {
                             <div className="book-main__rating">
                                 <RatingDisplay />
                             </div>
-                            <h1 className="book-main__title">Factfulness</h1>
+                            <h1 className="book-main__title">{fetchedBook ? fetchedBook.title : 'Loading...'}</h1>
                         </div>
                         <div className="btn-group">
                             <BookmarkBtn />
@@ -25,22 +73,38 @@ const Book = () => {
 
                     </div>
                     <ul className="book-card__authors">
-                        <li className="book-card__author">Hans Rosling</li>
-                        <li className="book-card__author">Ola Rosling</li>
-                        <li className="book-card__author">Anna Rosling Rönnlund</li>
+                        {
+                            authors ?
+                            authors.map(author => (
+                                <li 
+                                    className="book-card__author" 
+                                    key={author._id}>
+
+                                    <Link to={`/authors/${author.name}/${author._id}`} exact>
+                                        {author.name}
+                                    </Link>
+                                </li>
+                            )) : 'Loading...'
+                        }
                     </ul>
                     <p className="book-main__description">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore magna
-                        aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                        ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        Duis aute irure dolor in reprehenderit in voluptate velit
-                        esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                        occaecat cupidatat non proident, sunt in culpa qui officia
-                        deserunt mollit anim id est laborum.
+                        {fetchedBook ? fetchedBook.summary : 'Loading...'}
                     </p>
+                    <ul className="book-main__types">
+                        {
+                            categories ? 
+                            categories.map(category => (
+                            <li className="book-main__type" key={category._id}>
+                                <Link to={`/library?category=${category.category}`}>
+                                    {category.category}
+                                </Link>
+                            </li>
+                            )) : 'Loading...'
+                        }
+                    </ul>
                 </div>
             </div>
+            <Comments />
         </div>
     );
 }
