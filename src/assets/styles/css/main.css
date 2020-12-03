@@ -153,7 +153,17 @@ a {
       font-size: 12px; }
       .navbar__links > li:not(:last-child), .navbar__icons > li:not(:last-child) {
         margin-right: 2em; }
+  .navbar__links {
+    display: flex;
+    justify-content: center; }
+  .navbar__link--btn {
+    display: block;
+    justify-self: center;
+    align-self: center; }
   .navbar__link {
+    display: block;
+    justify-self: center;
+    align-self: center;
     position: relative; }
     .navbar__link:hover::after {
       width: 100%; }
@@ -176,6 +186,37 @@ a {
   .navbar__search {
     position: relative;
     width: 370px; }
+
+.user_nav {
+  position: relative; }
+
+.avatar, .username {
+  display: inline-block;
+  cursor: pointer; }
+
+.username {
+  vertical-align: top;
+  margin-top: 12px; }
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  margin-left: 20px;
+  object-fit: cover;
+  border-radius: 50%; }
+
+.user_menu {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #afafaf;
+  background-color: white;
+  padding: 12px; }
+  .user_menu > li {
+    padding: 10px 0; }
 
 @media only screen and (max-width: 768px) {
   .navbar__links {
@@ -331,6 +372,9 @@ a {
   margin-bottom: 8px; }
   .btn-group > button:first-child {
     margin-right: 8px; }
+  .btn-group > form {
+    display: inline-block;
+    margin-right: 10px; }
 
 .book-main {
   display: flex;

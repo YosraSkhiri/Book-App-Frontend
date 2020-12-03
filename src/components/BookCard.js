@@ -63,7 +63,7 @@ const BookCard = (props) => {
                 </div>
             </div>
             <div className="btn-group">
-                <BookmarkBtn />
+                <BookmarkBtn bookId={props.book._id}/>
                 <button className="btn btn-with-icon btn-primary">
                     <span>Read more</span>
                     <svg width="5" height="9" viewBox="0 0 5 9" fill="none">

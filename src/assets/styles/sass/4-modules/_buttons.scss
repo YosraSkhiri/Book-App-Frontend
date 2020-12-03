@@ -78,4 +78,9 @@
     & > button:first-child {
         margin-right: 8px;
     }
+
+    & > form {
+        display: inline-block;
+        margin-right: 10px;
+    }
 }

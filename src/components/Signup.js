@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import Cookies from 'js-cookie';
 import NotificationInfo from './NotificationInfo';
 
 const Signup = () => {
@@ -11,6 +12,13 @@ const Signup = () => {
     });
 
     const [res, setRes] = useState();
+    const isLogged = useState(Cookies.get('isLogged'));
+
+    useEffect(() => {
+        if(isLogged[0]) {
+            window.location.href='http://localhost:3000/';
+        }
+    }, []);
 
     const handleChange = (e) => {
         setSignupData({...signupData, [e.target.name]: e.target.value});
@@ -29,6 +37,7 @@ const Signup = () => {
     }
 
     return (
+        isLogged[0] ? 'Redirecting...' :
         <div className="auth-container">
             <h1 className="auth-heading">Sign Up</h1>
             <form onSubmit={handleSubmit}>

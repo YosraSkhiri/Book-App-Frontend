@@ -26,7 +26,21 @@
         }
     }
 
+    &__links {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__link--btn {
+        display: block;
+        justify-self: center;
+        align-self: center;
+    }
+
     &__link {
+        display: block;
+        justify-self: center;
+        align-self: center;
         position: relative;
 
         &:hover::after {
@@ -61,6 +75,44 @@
     &__search {
         position: relative;
         width: 370px;
+    }
+}
+
+.user_nav {
+    position: relative;
+}
+
+.avatar, .username {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.username {
+    vertical-align: top;
+    margin-top: 12px;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    margin-left: 20px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.user_menu {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid $border-color;
+    background-color: white;
+    padding: 12px;
+
+    & > li {
+        padding: 10px 0;
     }
 }
 

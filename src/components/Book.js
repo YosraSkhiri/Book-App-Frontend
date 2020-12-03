@@ -67,7 +67,7 @@ const Book = () => {
                             <h1 className="book-main__title">{fetchedBook ? fetchedBook.title : 'Loading...'}</h1>
                         </div>
                         <div className="btn-group">
-                            <BookmarkBtn />
+                            <BookmarkBtn bookId={fetchedBook ? fetchedBook._id : ''}/>
                             <button className="btn btn-primary">Publish a review</button>
                         </div>
 

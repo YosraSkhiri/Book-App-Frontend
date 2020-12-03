@@ -1,14 +1,22 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import Cookies from 'js-cookie';
 import NotificationInfo from './NotificationInfo';
 
-const Login = () => {
+const Login = (props) => {
     const [loginData, setLoginData] = useState({
         email: '',
         password: ''
     });
 
     const [res, setRes] = useState();
+    const isLogged = useState(Cookies.get('isLogged'));
+
+    useEffect(() => {
+        if(isLogged[0]) {
+            window.location.href='http://localhost:3000/';
+        }
+    }, []);
 
     const handleChange = (e) => {
         setLoginData({...loginData, [e.target.name]: e.target.value});
@@ -16,16 +24,19 @@ const Login = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:5000/readers/login/', loginData)
+        axios.post('http://localhost:5000/readers/login/', loginData, { withCredentials: true })
             .then(res => {
                 setRes(res.data.msg);
+                props.setLoginState(true);
+                window.location.href='http://localhost:3000/'; 
             })
             .catch(err => {
                 setRes(err.response.data.msg);
             });
     }
 
-    return (
+    return ( 
+        isLogged[0] ? 'Redirecting...' :
         <div className="auth-container">
             <h1 className="auth-heading">Login</h1>
             <form onSubmit={handleSubmit}>
