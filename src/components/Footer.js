@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import Cookies from 'js-cookie';
 import Logo from './Logo';
 
 const Footer = () => {
+    const isLogged = useState(Cookies.get('isLogged'));
+
     return (
         <footer>
             <div className="footer_container">
@@ -15,8 +18,13 @@ const Footer = () => {
                     <h2 className="footer_title">Useful Links</h2>
                     <ul className="footer_liks">
                         <li><Link to="/">Home</Link></li>
-                        <li><Link to="/login">Login</Link></li>
-                        <li><Link to="/Signup">Signup</Link></li>
+                        {
+                            !isLogged[0] ?
+                            <>
+                            <li><Link to="/login">Login</Link></li>
+                            <li><Link to="/Signup">Signup</Link></li>
+                            </> : null
+                        }
                         <li><Link to="/contribute">Contribute</Link></li>
                     </ul>
                 </div>
