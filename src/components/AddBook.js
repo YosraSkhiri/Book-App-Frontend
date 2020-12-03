@@ -41,6 +41,7 @@ const AddBook = () => {
         formData.append('authors', newBook.authors);
         formData.append('summary', newBook.summary);
         formData.append('categories', newBook.categories);
+        formData.append('release_date', newBook.release_date);
 
         axios.post('http://localhost:5000/books/add/', formData)
             .then(res => {

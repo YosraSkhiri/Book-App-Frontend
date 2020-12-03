@@ -3,12 +3,16 @@ import NotificationInfo from './NotificationInfo';
 import axios from 'axios';
 
 const ReadingList = () => {
-
     const [books, setBooks] = useState();
     const [res, setRes] = useState();
 
-    const handleClick = () => {
-        
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        axios.post('http://localhost:5000/readers/readinglist/delete', { bookId: e.target.children[0].value}, { withCredentials: true })
+        .then(res => {
+            setRes(res.data.msg);
+        })
+        .catch(err => setRes(err.response.data.msg))
     }
 
     useEffect(() => {
@@ -38,12 +42,18 @@ const ReadingList = () => {
                                     <div className="rl__book-title">
                                         {book.title} 
                                     </div>
-                                    <button className="rl__book-btn" onClick={handleClick}> 
-                                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#393939" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
-                                            <line x1="18" y1="6" x2="6" y2="18"></line>
-                                            <line x1="6" y1="6" x2="18" y2="18"></line>
-                                        </svg>
-                                    </button>
+                                    <form onSubmit={handleSubmit}>
+                                        <input type="hidden" value={book._id} name="bookId"/>
+                                        <button 
+                                            type="submit"
+                                            className="rl__book-btn" 
+                                        > 
+                                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#393939" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
+                                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                                            </svg>
+                                        </button>
+                                    </form>
                                 </li>
                             ))
                         }

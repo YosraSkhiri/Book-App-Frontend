@@ -5,7 +5,7 @@ import axios from 'axios';
 
 const RatingStars = ({rating, bookId}) => {
     const [inputRating, setInputRating] = useState({
-        value: rating,
+        value: '',
         bookId: ''
     });
     const [input, setInput] = useState(rating);
@@ -16,12 +16,16 @@ const RatingStars = ({rating, bookId}) => {
 
     const handleClick = (e) => {
         const nbStar = e.target.id.slice(-1);
+        console.log(+nbStar)
         setInput(+nbStar);
         setInputRating({
             bookId: bookId,
-            value: e.target.value
+            value: +nbStar
         });
-        axios.post('http://localhost:5000/readers/rating', inputRating, { withCredentials: true })
+        axios.post('http://localhost:5000/readers/rating',{
+            bookId: bookId,
+            value: +nbStar
+        }, { withCredentials: true })
         .then(res => {
             setRes(res.data.msg);
         })
@@ -45,7 +49,7 @@ const RatingStars = ({rating, bookId}) => {
                             name="book_rating"
                             id={`star${index + 1}`}
                             value={index + 1}
-                            onChange={e => { }}
+                            onChange={e => {}}
                             checked={Math.round(input) === index + 1 ? true : false}
                         />
                         <svg viewBox="0 0 16.79 16.08">

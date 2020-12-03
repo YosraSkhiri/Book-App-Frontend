@@ -3,7 +3,7 @@ import axios from 'axios';
 import Cookies from 'js-cookie';
 import NotificationInfo from './NotificationInfo';
 
-const Login = (props) => {
+const Login = () => {
     const [loginData, setLoginData] = useState({
         email: '',
         password: ''
@@ -27,11 +27,10 @@ const Login = (props) => {
         axios.post('http://localhost:5000/readers/login/', loginData, { withCredentials: true })
             .then(res => {
                 setRes(res.data.msg);
-                props.setLoginState(true);
                 window.location.href='http://localhost:3000/'; 
             })
-            .catch(err => {
-                setRes(err.response.data.msg);
+            .catch(err => { 
+                setRes(err.response.data.msg);   
             });
     }
 
