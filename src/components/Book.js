@@ -62,12 +62,16 @@ const Book = () => {
                     <div className="book-main__fst-row">
                         <div>
                             <div className="book-main__rating">
-                                <RatingDisplay />
+                                <RatingDisplay bookId={fetchedBook ? fetchedBook._id : ''}/>
                             </div>
                             <h1 className="book-main__title">{fetchedBook ? fetchedBook.title : 'Loading...'}</h1>
                         </div>
                         <div className="btn-group">
-                            <BookmarkBtn bookId={fetchedBook ? fetchedBook._id : ''}/>
+                            <BookmarkBtn 
+                                bookId={fetchedBook ? fetchedBook._id : ''}
+                                title={fetchedBook ? fetchedBook.title : ''}
+                                cover={fetchedBook ? fetchedBook.cover : ''}
+                            />
                             <button className="btn btn-primary">Publish a review</button>
                         </div>
 
@@ -80,7 +84,7 @@ const Book = () => {
                                     className="book-card__author" 
                                     key={author._id}>
 
-                                    <Link to={`/authors/${author.name}/${author._id}`} exact>
+                                    <Link to={`/authors/${author.name}/${author._id}`} >
                                         {author.name}
                                     </Link>
                                 </li>
@@ -104,7 +108,7 @@ const Book = () => {
                     </ul>
                 </div>
             </div>
-            <Comments />
+            <Comments bookId={fetchedBook ? fetchedBook._id : ''}/>
         </div>
     );
 }

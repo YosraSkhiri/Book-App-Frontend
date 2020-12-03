@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -18,16 +18,11 @@ import ReadingList from './components/ReadingList';
 import Signup from './components/Signup';
 
 function App() {
-  const [isLogged, setIsLogged] = useState(false);
-
-  const setLoginState = (val) => {
-    setIsLogged(val)
-  }
 
   return (
     <div>
       <Router>
-        <Navbar isLogged={isLogged}/>
+        <Navbar/>
         <div className="container">
           <Switch>
             <Route path="/" exact>
@@ -38,7 +33,7 @@ function App() {
               <Signup />
             </Route>
             <Route path="/login" exact>
-              <Login setLoginState={setLoginState} />
+              <Login />
             </Route>
             <Route path="/readinglist" exact>
               <ReadingList />

@@ -402,6 +402,42 @@ a {
     border-radius: 8px;
     border: 1px solid #00c0fa; }
 
+.comment {
+  width: 100%;
+  padding: 8px;
+  margin: 4px 0;
+  border-radius: 10px;
+  background-color: #d6d6ff; }
+  .comment__owner {
+    font-weight: 700;
+    font-size: 16px; }
+  .comment__date {
+    font-size: 12px;
+    margin-bottom: 8px; }
+
+.rl__books {
+  max-width: 500px;
+  padding: 8px 12px;
+  border: 1px solid #afafaf;
+  border-radius: 20px;
+  background-color: #f7f7f7; }
+  .rl__books .rl__book {
+    display: flex;
+    gap: 10px;
+    padding: 10px 8px;
+    margin-bottom: 8px;
+    border: 1px solid #afafaf;
+    border-radius: 20px; }
+    .rl__books .rl__book-cover > img {
+      display: block;
+      width: 50px; }
+    .rl__books .rl__book-title {
+      font-size: 22px;
+      align-self: center; }
+
+.rl-title {
+  margin-bottom: 18px; }
+
 .rating-stars__stats {
   margin: 0 5px; }
 

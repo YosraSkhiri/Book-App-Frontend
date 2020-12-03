@@ -70,7 +70,7 @@ const Navbar = () => {
                         </li>
                     </ul>
                     <ul className={ menuClass }>
-                        <li className="navbar__link"><Link to="library">Library</Link></li>
+                        <li className="navbar__link"><Link to="/library">Library</Link></li>
                         {
                             isLogged[0] ?
                              <li>
@@ -92,7 +92,7 @@ const Navbar = () => {
                              </li>
                             :
                             <>
-                                <li className="navbar__link"><Link to="login">Log in</Link></li>
+                                <li className="navbar__link"><Link to="/login">Log in</Link></li>
                                 <li className="navbar__link--btn"><Link to="/signup" className="btn btn-primary">Sign up</Link></li>
                             </>
                         }

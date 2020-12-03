@@ -38,3 +38,52 @@
         border: 1px solid $primary-color;
     }
 }
+
+.comment {
+    width: 100%;
+    padding: 8px;
+    margin: 4px 0;
+    border-radius: 10px;
+    background-color: rgb(214, 214, 255);
+
+    &__owner {
+        font-weight: 700;
+        font-size: 16px;
+    }
+
+    &__date {
+        font-size: 12px;
+        margin-bottom: 8px;
+    }
+}
+
+.rl__books {
+    max-width: 500px;
+    padding: 8px 12px;
+    border: 1px solid $border-color;
+    border-radius: 20px;
+    background-color: rgb(247, 247, 247);
+
+    .rl__book {
+        display: flex;
+        gap: 10px;
+        padding: 10px 8px;
+        margin-bottom: 8px;
+        border: 1px solid $border-color;
+        border-radius: 20px;
+
+        &-cover > img {
+            display: block;
+            width: 50px;
+        }
+
+        &-title {
+            font-size: 22px;
+            align-self: center;
+        }
+    }
+}
+
+.rl-title {
+    margin-bottom: 18px;
+}
