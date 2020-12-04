@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import BookCard from './BookCard';
+import BookCard from '../common/BookCard';
 import axios from 'axios';
 
 const Books = (props) => {

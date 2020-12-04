@@ -1,13 +1,9 @@
 import React, { useState } from 'react';
-import NotificationInfo from './NotificationInfo';
+import NotificationInfo from './common/NotificationInfo';
 import axios from 'axios';
 
 
 const RatingStars = ({rating, bookId}) => {
-    const [inputRating, setInputRating] = useState({
-        value: '',
-        bookId: ''
-    });
     const [input, setInput] = useState(rating);
     const [res, setRes] = useState();
     const grades = ["Poor", "Fair", "Good", "Very good", "Excellent"];
@@ -16,12 +12,8 @@ const RatingStars = ({rating, bookId}) => {
 
     const handleClick = (e) => {
         const nbStar = e.target.id.slice(-1);
-        console.log(+nbStar)
         setInput(+nbStar);
-        setInputRating({
-            bookId: bookId,
-            value: +nbStar
-        });
+
         axios.post('http://localhost:5000/readers/rating',{
             bookId: bookId,
             value: +nbStar

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import NotificationInfo from './NotificationInfo';
+import NotificationInfo from './common/NotificationInfo';
 import axios from 'axios';
 
 const ReadingList = () => {

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import NotificationInfo from './NotificationInfo';
+import NotificationInfo from './common/NotificationInfo';
 import Cookies from 'js-cookie';
 import axios from 'axios';
 

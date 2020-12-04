@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import Books from './Books';
+import Books from '../layout/Books';
 import { Link } from 'react-router-dom';
 
 const Library = () => {

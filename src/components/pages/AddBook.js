@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import NotificationInfo from './NotificationInfo';
+import NotificationInfo from '../common/NotificationInfo';
 
 const AddBook = () => {
     const [newBook, setNewBook] = useState({

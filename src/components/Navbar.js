@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Cookies from 'js-cookie';
 import axios from 'axios';
-import Logo from './Logo';
+import Logo from './common/Logo';
 import SearchInput from './SearchInput';
 
 const Navbar = () => {

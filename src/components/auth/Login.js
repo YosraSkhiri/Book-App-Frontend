@@ -1,12 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Cookies from 'js-cookie';
-import NotificationInfo from './NotificationInfo';
+import NotificationInfo from '../common/NotificationInfo';
 
-const Signup = () => {
-    const [signupData, setSignupData] = useState({
-        first_name: '',
-        last_name: '',
+const Login = () => {
+    const [loginData, setLoginData] = useState({
         email: '',
         password: ''
     });
@@ -21,48 +19,26 @@ const Signup = () => {
     }, []);
 
     const handleChange = (e) => {
-        setSignupData({...signupData, [e.target.name]: e.target.value});
+        setLoginData({...loginData, [e.target.name]: e.target.value});
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        
-        axios.post('http://localhost:5000/readers/register/', signupData)
+        axios.post('http://localhost:5000/readers/login/', loginData, { withCredentials: true })
             .then(res => {
-                setRes(res.data.msg)
+                setRes(res.data.msg);
+                window.location.href='http://localhost:3000/'; 
             })
-            .catch(err => {
-                setRes(err.response.data.msg)
+            .catch(err => { 
+                setRes(err.response.data.msg);   
             });
     }
 
-    return (
+    return ( 
         isLogged[0] ? 'Redirecting...' :
         <div className="auth-container">
-            <h1 className="auth-heading">Sign Up</h1>
+            <h1 className="auth-heading">Login</h1>
             <form onSubmit={handleSubmit}>
-                <label>First Name
-                    <input 
-                        type="text"
-                        placeholder="First Name"
-                        id="firstName"
-                        name="first_name"
-                        onChange={handleChange}
-                        className="input-txt input-txt--ac"
-                    />
-                </label>
-
-                <label>Last Name
-                    <input 
-                        type="text"
-                        placeholder="Last Name"
-                        id="lastName"
-                        name="last_name"
-                        onChange={handleChange}
-                        className="input-txt input-txt--ac"
-                    />
-                </label>
-
                 <label>Email
                     <input 
                         type="email"
@@ -85,7 +61,7 @@ const Signup = () => {
 
                 <input 
                     type="submit"
-                    value="Sign Up"
+                    value="Login"
                     className="btn btn-primary"
                 />
             </form>
@@ -96,4 +72,4 @@ const Signup = () => {
     );
 }
  
-export default Signup;
+export default Login;

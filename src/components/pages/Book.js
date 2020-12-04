@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import BookmarkBtn from './BookmarkBtn';
-import Comments from './Comments';
-import RatingDisplay from './RatingDisplay';
+import BookmarkBtn from '../common/BookmarkBtn';
+import Comments from '../Comments';
+import RatingDisplay from '../layout/RatingDisplay';
 import { Link } from 'react-router-dom';
 
 const Book = () => {

@@ -1,5 +1,5 @@
 import React from 'react';
-import RatingStars from './RatingStars';
+import RatingStars from '../RatingStars';
 
 const RatingDisplay = ({bookId}) => {
     return (

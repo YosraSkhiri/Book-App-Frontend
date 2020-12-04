@@ -4,18 +4,18 @@ import {
   Switch,
   Route
 } from "react-router-dom";
-import AddAuthor from './components/AddAuthor';
-import AddBook from './components/AddBook';
-import Author from './components/Author';
-import Book from './components/Book';
-import CategoriesCreate from './components/CategoriesCreate';
-import Footer from './components/Footer';
+import AddAuthor from './components/pages/AddAuthor';
+import AddBook from './components/pages/AddBook';
+import Author from './components/pages/Author';
+import Book from './components/pages/Book';
+import CategoriesCreate from './components/pages/CategoriesCreate';
+import Footer from './components/common/Footer';
 import Header from './components/Header';
-import Library from './components/Library';
-import Login from './components/Login';
+import Library from './components/pages/Library';
+import Login from './components/auth/Login';
 import Navbar from './components/Navbar';
 import ReadingList from './components/ReadingList';
-import Signup from './components/Signup';
+import Signup from './components/auth/Signup';
 
 function App() {
 
