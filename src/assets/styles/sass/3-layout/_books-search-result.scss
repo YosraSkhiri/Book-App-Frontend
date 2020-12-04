@@ -1,5 +1,8 @@
 .books-result {
+    flex: 1;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
-    justify-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
+    grid-template-rows: 194px;
+    grid-column-gap: 10px;
+    grid-row-gap: 50px;
 }

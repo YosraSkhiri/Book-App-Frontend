@@ -254,15 +254,18 @@ a {
     display: block; } }
 
 .books-result {
+  flex: 1;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
-  justify-items: center; }
+  grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
+  grid-template-rows: 194px;
+  grid-column-gap: 10px;
+  grid-row-gap: 50px; }
 
 .book-card__wrapper {
   display: grid;
   grid-template-columns: 110px auto;
   grid-template-areas: "book-cover book-info"  "book-cover book-card-btns";
-  max-width: 420px;
+  width: 420px;
   height: 194px;
   padding: 8px;
   overflow: hidden; }
