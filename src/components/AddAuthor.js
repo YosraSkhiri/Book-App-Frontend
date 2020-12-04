@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import placeholder from '../assets/images/placeholder.png'
 
 const AddAuthor = () => {
     const [newAuthor, setNewAuthor] = useState(
@@ -12,7 +11,7 @@ const AddAuthor = () => {
     );
 
     const [{ src, alt }, setPreview] = useState({
-        src: placeholder,
+        src: 'http://localhost:5000/images/assets/author_photo_placeholder.png',
         alt: 'Default'
     });
 

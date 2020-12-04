@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import NotificationInfo from './NotificationInfo';
-import BookPhotoPlaceholder from '../assets/images/book_photo_placeholder.png';
 
 const AddBook = () => {
     const [newBook, setNewBook] = useState({
@@ -14,7 +13,7 @@ const AddBook = () => {
     });
 
     const [{ src, alt }, setPreview] = useState({
-        src: BookPhotoPlaceholder,
+        src: 'http://localhost:5000/images/assets/book_photo_placeholder.png',
         alt: 'Upload Book'
     });
 
