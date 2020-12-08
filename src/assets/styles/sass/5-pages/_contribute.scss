@@ -1,0 +1,51 @@
+.contribute-title {
+    margin-bottom: 14px;
+    font-size: 24px;
+}
+
+.contribute-para {
+    opacity: .8;
+    font-size: 16px;
+    margin-bottom: 40px;
+}
+
+.contribute-cards {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 28px;
+}
+
+.contribute-card {
+    padding: 10px 26px;
+    border-radius: 15px;
+    border: 1px solid $border-color;
+
+    &:hover {
+        background-color: $primary-color;
+
+        & .contribute-card__title {
+            color: white;
+        }
+    }
+}
+
+.contribute-card__illu {
+    position: relative;
+    min-width: 170px;
+    min-height: 190px;
+
+    & > svg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.contribute-card__title {
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    margin: 10px 0;
+}

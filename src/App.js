@@ -16,6 +16,7 @@ import Login from './components/auth/Login';
 import Navbar from './components/Navbar';
 import ReadingList from './components/ReadingList';
 import Signup from './components/auth/Signup';
+import Contribute from './components/pages/Contribute';
 
 function App() {
 
@@ -55,6 +56,9 @@ function App() {
             </Route>
             <Route path="/authors/:name/:id" exact>
               <Author />
+            </Route>
+            <Route path="/contribute" exact>
+              <Contribute />
             </Route>
           </Switch>
         </div>
