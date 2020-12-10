@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Books from '../layout/Books';
+import NotificationInfo from '../common/NotificationInfo';
 import { Link } from 'react-router-dom';
 
 const Library = () => {
     const [categories, setCategories] = useState([]);
     const [category, setCategory] = useState('');
+    const [res, setRes] = useState();
 
     useEffect(() => {
         axios.get('http://localhost:5000/categories/')
@@ -13,7 +15,7 @@ const Library = () => {
                 setCategories(res.data);
             })
             .catch(err => {
-                console.log(err)
+                setRes(err.response.data.msg);
             })
     }, []);
 
@@ -39,7 +41,10 @@ const Library = () => {
                     }
                 </ul>
             </div> 
-            <Books category={category}/>         
+            <Books category={category}/>   
+            {
+                res ? <NotificationInfo res={res}/> : null
+            }      
         </div>
     );
 }
